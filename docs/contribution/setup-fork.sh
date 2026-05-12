@@ -182,15 +182,15 @@ create_git_setup_info() {
 git remote -v
 
 # If you don't have 'upstream' configured, add it:
-git remote add upstream https://github.com/community-scripts/ProxmoxVED.git
+git remote add upstream https://github.com/enric0r/ProxmoxVED.git
 
 # Verify both remotes exist:
 git remote -v
 # Should show:
 # origin     https://github.com/YOUR_USERNAME/ProxmoxVED.git (fetch)
 # origin     https://github.com/YOUR_USERNAME/ProxmoxVED.git (push)
-# upstream   https://github.com/community-scripts/ProxmoxVED.git (fetch)
-# upstream   https://github.com/community-scripts/ProxmoxVED.git (push)
+# upstream   https://github.com/enric0r/ProxmoxVED.git (fetch)
+# upstream   https://github.com/enric0r/ProxmoxVED.git (push)
 ```
 
 ### Configure Git User (if not done globally)
@@ -316,7 +316,7 @@ echo ""
 
 print_success "All documentation links updated to point to your fork"
 print_info "Your fork: https://github.com/$USERNAME/$REPO_NAME"
-print_info "Upstream: https://github.com/community-scripts/ProxmoxVED"
+print_info "Upstream: https://github.com/enric0r/ProxmoxVED"
 echo ""
 
 echo -e "${BLUE}Next Steps:${NC}"

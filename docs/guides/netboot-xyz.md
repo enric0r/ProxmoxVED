@@ -44,7 +44,7 @@ Your container is the **signpost**. The internet is the **library**.
 Run on your **Proxmox host**:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/ct/netboot-xyz.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/enric0r/ProxmoxVED/main/ct/netboot-xyz.sh)"
 ```
 
 Creates a minimal Debian 13 LXC container:
@@ -232,7 +232,7 @@ Full documentation: [netboot.xyz/docs](https://netboot.xyz/docs/)
 The update script preserves your `boot.cfg` customizations, updates menus and bootloaders to the latest release:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/ct/netboot-xyz.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/enric0r/ProxmoxVED/main/ct/netboot-xyz.sh)"
 ```
 
 ---

@@ -252,7 +252,7 @@ echo -e "\${BL}━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # Source tools.func for update functions
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/tools.func) 2>/dev/null || {
+source <(curl -fsSL https://raw.githubusercontent.com/enric0r/ProxmoxVED/main/misc/tools.func) 2>/dev/null || {
   echo -e "\${RD}Failed to load tools.func\${CL}"
   exit 1
 }

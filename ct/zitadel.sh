@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/enric0r/ProxmoxVED/main/misc/build.func)
 
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: dave-yap (dave-yap) | Co-author: remz1337
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/enric0r/ProxmoxVED/raw/main/LICENSE
 # Source: https://zitadel.com/
 
 APP="Zitadel"

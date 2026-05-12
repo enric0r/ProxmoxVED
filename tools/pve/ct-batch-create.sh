@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: GitHub Copilot
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/enric0r/ProxmoxVED/raw/main/LICENSE
 
 set -eEuo pipefail
 

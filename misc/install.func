@@ -2,7 +2,7 @@
 # Author: tteck (tteckster)
 # Co-Author: MickLesk
 # Co-Author: michelroegl-brunner
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/enric0r/ProxmoxVED/raw/main/LICENSE
 
 # ==============================================================================
 # INSTALL.FUNC - UNIFIED CONTAINER INSTALLATION & SETUP
@@ -198,7 +198,7 @@ _bootstrap() {
   fi
 
   # Configurable base URL for development — override with COMMUNITY_SCRIPTS_URL
-  COMMUNITY_SCRIPTS_URL="${COMMUNITY_SCRIPTS_URL:-https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main}"
+  COMMUNITY_SCRIPTS_URL="${COMMUNITY_SCRIPTS_URL:-https://raw.githubusercontent.com/enric0r/ProxmoxVED/main}"
 
   # Source core functions
   source <($_fetch "$COMMUNITY_SCRIPTS_URL/misc/core.func")
@@ -1221,7 +1221,7 @@ echo -e "${RD:-}WARNING: This is a DEVELOPMENT version (ProxmoxVED). Do NOT use 
 echo -e "${YW:-} OS: ${GN:-}${os_name} - Version: ${os_version}${CL:-}"
 echo -e "${YW:-} Hostname: ${GN:-}\$(hostname)${CL:-}"
 echo -e "${YW:-} IP Address: ${GN:-}\$(hostname -I 2>/dev/null | awk '{print \$1}' || ip -4 addr show scope global | awk '/inet /{print \$2}' | cut -d/ -f1 | head -1)${CL:-}"
-echo -e "${YW:-} Repository: ${GN:-}https://github.com/community-scripts/ProxmoxVED${CL:-}"
+echo -e "${YW:-} Repository: ${GN:-}https://github.com/enric0r/ProxmoxVED${CL:-}"
 echo ""
 EOF
   # openSUSE's /etc/bash.bashrc sources profile.d via `[ -x ]`, not `[ -r ]`,
@@ -1238,7 +1238,7 @@ EOF
 ${APPLICATION:-Container} LXC Container - DEV Repository
 WARNING: This is a DEVELOPMENT version (ProxmoxVED). Do NOT use in production!
  OS: ${os_name} - Version: ${os_version}
- Repository: https://github.com/community-scripts/ProxmoxVED
+ Repository: https://github.com/enric0r/ProxmoxVED
 
 EOF
 
@@ -1424,7 +1424,7 @@ EOF
   # Create update script
   # Use var_os for OS-based containers, otherwise use app name
   local update_script_name="${var_os:-$app}"
-  echo "bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/ct/${update_script_name}.sh)\"" >/usr/bin/update
+  echo "bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/enric0r/ProxmoxVED/main/ct/${update_script_name}.sh)\"" >/usr/bin/update
   chmod +x /usr/bin/update
 
   # Inject SSH authorized keys if provided
