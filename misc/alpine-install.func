@@ -186,6 +186,8 @@ EOF
     msg_ok "Customized Container"
   fi
 
-  echo "bash -c \"\$(curl -fsSL https://github.com/enric0r/ProxmoxVED/raw/main/ct/${app}.sh)\"" >/usr/bin/update
+  cat <<EOF >/usr/bin/update
+bash -c "\$(curl -fsSL ${COMMUNITY_SCRIPTS_URL}/ct/${app}.sh)"
+EOF
   chmod +x /usr/bin/update
 }
