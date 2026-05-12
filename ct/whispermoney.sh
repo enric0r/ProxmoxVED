@@ -31,7 +31,13 @@ function update_script() {
 
   if check_for_gh_release "whispermoney" "whisper-money/whisper-money"; then
     msg_info "Stopping Services"
-    systemctl stop caddy whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer whispermoney-scheduler.service
+    if systemctl list-unit-files | grep -q "^nginx.service"; then
+      systemctl stop nginx
+    fi
+    if systemctl list-unit-files | grep -q "^caddy.service"; then
+      systemctl stop caddy
+    fi
+    systemctl stop whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer whispermoney-scheduler.service
     msg_ok "Stopped Services"
 
     msg_info "Backing up Data"
@@ -68,7 +74,14 @@ function update_script() {
 
     msg_info "Starting Services"
     PHP_VER=$(php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;')
-    systemctl start php${PHP_VER}-fpm caddy whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer
+    systemctl start php${PHP_VER}-fpm
+    if systemctl list-unit-files | grep -q "^nginx.service"; then
+      systemctl start nginx
+    fi
+    if systemctl list-unit-files | grep -q "^caddy.service"; then
+      systemctl start caddy
+    fi
+    systemctl start whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer
     msg_ok "Started Services"
     msg_ok "Updated successfully!"
   fi
