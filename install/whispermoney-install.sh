@@ -111,6 +111,8 @@ EOF
 ln -sf /etc/nginx/sites-available/whispermoney /etc/nginx/sites-enabled/whispermoney
 rm -f /etc/nginx/sites-enabled/default
 $STD nginx -t
+systemctl enable -q nginx
+$STD systemctl restart nginx
 msg_ok "Configured Nginx"
 
 msg_info "Creating Services"
@@ -194,7 +196,7 @@ Persistent=true
 [Install]
 WantedBy=timers.target
 EOF
-systemctl enable -q --now php${PHP_VER}-fpm redis-server nginx whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer
+systemctl enable -q --now php${PHP_VER}-fpm redis-server whispermoney-ssr whispermoney-queue whispermoney-emails whispermoney-scheduler.timer
 msg_ok "Created Services"
 
 motd_ssh
